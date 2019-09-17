@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+int a[6],v[6];
+int main () {
+  srand(time(0));
+  int ok=1;
+  for (int j=1; j<=6; j++)
+  {
+      int n=1+(rand()% 55);
+    v[j]=n;
+  }
+  for(int i=1;i<6;i++)
+       for(int j=i+1; j<=6; j++)
+        if(v[i]==v[j])
+         v[j]=(1+(rand()% 55)+2)/2;
+ 
+  
+      
+   cout<<endl;cout<<"<<<<<<<<<<<<<<<<<<<<<<<<<Lucky numbers this time:>>>>>>>>>>>>>>>>>>>>>> "<<endl;
+   for(int i=1; i<=6; i++)
+      cout<<v[i]<<" ";
+int nr=0;
+   for(int i=1;i<=6;i++)
+       for(int j=1; j<=6; j++)
+           if(a[i]==v[j])nr++;
+   cout<<endl;cout<<endl;
+ 
+}
